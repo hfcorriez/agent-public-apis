@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "user_agent": "agent-public-apis-verify/1.0 (+https://github.com/hfcorriez/agent-public-apis)",
+  "timeout_seconds": 15,
+  "apis": [
+    {
+      "id": "frankfurter",
+      "category": "exchange",
+      "name": "Frankfurter",
+      "url": "https://api.frankfurter.dev/v1/latest?from=USD&to=EUR",
+      "json_path": "rates.EUR",
+      "fallback": "er-api"
+    },
+    {
+      "id": "er-api",
+      "category": "exchange",
+      "name": "Open ExchangeRate-API",
+      "url": "https://open.er-api.com/v6/latest/USD",
+      "json_path": "rates.EUR",
+      "fallback": "currency-api"
+    },
+    {
+      "id": "currency-api",
+      "category": "exchange",
+      "name": "Currency API (Cloudflare Pages)",
+      "url": "https://latest.currency-api.pages.dev/v1/currencies/usd.json",
+      "json_path": "usd.eur",
+      "fallback": "frankfurter"
+    },
+    {
+      "id": "open-meteo",
+      "category": "weather",
+      "name": "Open-Meteo",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true",
+      "json_path": "current_weather.temperature",
+      "fallback": "wttr"
+    },
+    {
+      "id": "wttr",
+      "category": "weather",
+      "name": "wttr.in",
+      "url": "https://wttr.in/London?format=j1",
+      "json_path": "current_condition.0.temp_C",
+      "fallback": "met-no"
+    },
+    {
+      "id": "met-no",
+      "category": "weather",
+      "name": "MET Norway",
+      "url": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60.10&lon=9.58",
+      "json_path": "properties.meta.updated_at",
+      "fallback": "open-meteo-air"
+    },
+    {
+      "id": "open-meteo-air",
+      "category": "weather",
+      "name": "Open-Meteo Air Quality",
+      "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=52.52&longitude=13.41&current=us_aqi",
+      "json_path": "current.us_aqi",
+      "fallback": "open-meteo"
+    },
+    {
+      "id": "ipwho",
+      "category": "geo",
+      "name": "ipwho.is",
+      "url": "https://ipwho.is/",
+      "json_path": "country",
+      "fallback": "geojs"
+    },
+    {
+      "id": "geojs",
+      "category": "geo",
+      "name": "geoJS",
+      "url": "https://get.geojs.io/v1/ip/geo.json",
+      "json_path": "country",
+      "fallback": "zippopotam"
+    },
+    {
+      "id": "zippopotam",
+      "category": "geo",
+      "name": "Zippopotam",
+      "url": "https://api.zippopotam.us/us/90210",
+      "json_path": "places.0.latitude",
+      "fallback": "open-meteo-geocode"
+    },
+    {
+      "id": "open-meteo-geocode",
+      "category": "geo",
+      "name": "Open-Meteo Geocoding",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=1",
+      "json_path": "results.0.latitude",
+      "fallback": "country-is"
+    },
+    {
+      "id": "country-is",
+      "category": "geo",
+      "name": "country.is",
+      "url": "https://api.country.is/",
+      "json_path": "country",
+      "fallback": "ipify"
+    },
+    {
+      "id": "ipify",
+      "category": "geo",
+      "name": "ipify",
+      "url": "https://api.ipify.org?format=json",
+      "json_path": "ip",
+      "fallback": "ipwho"
+    },
+    {
+      "id": "jsonplaceholder",
+      "category": "testdata",
+      "name": "JSONPlaceholder",
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "json_path": "id",
+      "fallback": "dummyjson"
+    },
+    {
+      "id": "dummyjson",
+      "category": "testdata",
+      "name": "DummyJSON",
+      "url": "https://dummyjson.com/products/1",
+      "json_path": "title",
+      "fallback": "randomuser"
+    },
+    {
+      "id": "randomuser",
+      "category": "testdata",
+      "name": "Random User",
+      "url": "https://randomuser.me/api/?results=1",
+      "json_path": "results.0.login.uuid",
+      "fallback": "httpbingo"
+    },
+    {
+      "id": "httpbingo",
+      "category": "testdata",
+      "name": "httpbingo",
+      "url": "https://httpbingo.org/get",
+      "json_path": "url",
+      "fallback": "fakestore"
+    },
+    {
+      "id": "fakestore",
+      "category": "testdata",
+      "name": "Fake Store",
+      "url": "https://fakestoreapi.com/products/1",
+      "json_path": "title",
+      "fallback": "dogceo"
+    },
+    {
+      "id": "dogceo",
+      "category": "testdata",
+      "name": "Dog CEO",
+      "url": "https://dog.ceo/api/breeds/image/random",
+      "json_path": "message",
+      "fallback": "jsonplaceholder"
+    },
+    {
+      "id": "dictionaryapi",
+      "category": "language",
+      "name": "Free Dictionary API",
+      "url": "https://api.dictionaryapi.dev/api/v2/entries/en/hello",
+      "json_path": "0.word",
+      "fallback": "datamuse"
+    },
+    {
+      "id": "datamuse",
+      "category": "language",
+      "name": "Datamuse",
+      "url": "https://api.datamuse.com/words?rel_syn=happy&max=5",
+      "json_path": "0.word",
+      "fallback": "mymemory"
+    },
+    {
+      "id": "mymemory",
+      "category": "language",
+      "name": "MyMemory Translate",
+      "url": "https://api.mymemory.translated.net/get?q=Hello&langpair=en|es",
+      "json_path": "responseData.translatedText",
+      "fallback": "languagetool"
+    },
+    {
+      "id": "languagetool",
+      "category": "language",
+      "name": "LanguageTool languages",
+      "url": "https://api.languagetool.org/v2/languages",
+      "json_path": "0.code",
+      "fallback": "dictionaryapi"
+    },
+    {
+      "id": "hn-algolia",
+      "category": "news",
+      "name": "HN Algolia",
+      "url": "https://hn.algolia.com/api/v1/search?query=ai&hitsPerPage=1",
+      "json_path": "hits.0.title",
+      "fallback": "spaceflight"
+    },
+    {
+      "id": "spaceflight",
+      "category": "news",
+      "name": "Spaceflight News",
+      "url": "https://api.spaceflightnewsapi.net/v4/articles/?limit=1",
+      "json_path": "results.0.title",
+      "fallback": "devto"
+    },
+    {
+      "id": "devto",
+      "category": "news",
+      "name": "DEV.to",
+      "url": "https://dev.to/api/articles?per_page=1",
+      "json_path": "0.title",
+      "fallback": "lobsters"
+    },
+    {
+      "id": "lobsters",
+      "category": "news",
+      "name": "Lobsters",
+      "url": "https://lobste.rs/hottest.json",
+      "json_path": "0.title",
+      "fallback": "hn-algolia"
+    },
+    {
+      "id": "coinbase",
+      "category": "crypto",
+      "name": "Coinbase Spot",
+      "url": "https://api.coinbase.com/v2/prices/BTC-USD/spot",
+      "json_path": "data.amount",
+      "fallback": "coingecko"
+    },
+    {
+      "id": "coingecko",
+      "category": "crypto",
+      "name": "CoinGecko",
+      "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
+      "json_path": "bitcoin.usd",
+      "fallback": "kraken"
+    },
+    {
+      "id": "kraken",
+      "category": "crypto",
+      "name": "Kraken Public Ticker",
+      "url": "https://api.kraken.com/0/public/Ticker?pair=XBTUSD",
+      "json_path": "result.XXBTZUSD.c.0",
+      "fallback": "gemini"
+    },
+    {
+      "id": "gemini",
+      "category": "crypto",
+      "name": "Gemini Public Ticker",
+      "url": "https://api.gemini.com/v1/pubticker/btcusd",
+      "json_path": "last",
+      "fallback": "coinlore"
+    },
+    {
+      "id": "coinlore",
+      "category": "crypto",
+      "name": "Coinlore",
+      "url": "https://api.coinlore.net/api/ticker/?id=90",
+      "json_path": "0.price_usd",
+      "fallback": "coinbase"
+    },
+    {
+      "id": "timeapi",
+      "category": "time",
+      "name": "Time API",
+      "url": "https://timeapi.io/api/Time/current/zone?timeZone=UTC",
+      "json_path": "dateTime",
+      "fallback": "nager"
+    },
+    {
+      "id": "nager",
+      "category": "time",
+      "name": "Nager.Date Holidays",
+      "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+      "json_path": "0.date",
+      "fallback": "sunrise"
+    },
+    {
+      "id": "sunrise",
+      "category": "time",
+      "name": "Sunrise-Sunset",
+      "url": "https://api.sunrise-sunset.org/json?lat=36.72&lng=-4.42&formatted=0",
+      "json_path": "results.sunrise",
+      "fallback": "timeapi"
+    },
+    {
+      "id": "usgs",
+      "category": "science",
+      "name": "USGS Earthquakes",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+      "json_path": "metadata.title",
+      "fallback": "wikipedia"
+    },
+    {
+      "id": "wikipedia",
+      "category": "science",
+      "name": "Wikipedia REST Summary",
+      "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Earth",
+      "json_path": "title",
+      "fallback": "openlibrary"
+    },
+    {
+      "id": "openlibrary",
+      "category": "science",
+      "name": "Open Library Search",
+      "url": "https://openlibrary.org/search.json?q=dune&limit=1",
+      "json_path": "numFound",
+      "fallback": "gbif"
+    },
+    {
+      "id": "gbif",
+      "category": "science",
+      "name": "GBIF Species Match",
+      "url": "https://api.gbif.org/v1/species/match?name=Puma%20concolor",
+      "json_path": "scientificName",
+      "fallback": "openfda"
+    },
+    {
+      "id": "openfda",
+      "category": "science",
+      "name": "openFDA Drug Labels",
+      "url": "https://api.fda.gov/drug/label.json?limit=1",
+      "json_path": "meta.disclaimer",
+      "fallback": "carbonuk"
+    },
+    {
+      "id": "carbonuk",
+      "category": "science",
+      "name": "UK Carbon Intensity",
+      "url": "https://api.carbonintensity.org.uk/intensity",
+      "json_path": "data.0.intensity.index",
+      "fallback": "artic"
+    },
+    {
+      "id": "artic",
+      "category": "science",
+      "name": "Art Institute of Chicago",
+      "url": "https://api.artic.edu/api/v1/artworks/129884?fields=id,title,artist_display",
+      "json_path": "data.title",
+      "fallback": "usgs"
+    },
+    {
+      "id": "pokeapi",
+      "category": "entertainment",
+      "name": "PokéAPI",
+      "url": "https://pokeapi.co/api/v2/pokemon/ditto",
+      "json_path": "name",
+      "fallback": "tvmaze"
+    },
+    {
+      "id": "tvmaze",
+      "category": "entertainment",
+      "name": "TVmaze",
+      "url": "https://api.tvmaze.com/shows/1",
+      "json_path": "name",
+      "fallback": "rickmorty"
+    },
+    {
+      "id": "rickmorty",
+      "category": "entertainment",
+      "name": "Rick and Morty",
+      "url": "https://rickandmortyapi.com/api/character/1",
+      "json_path": "name",
+      "fallback": "jokeapi"
+    },
+    {
+      "id": "jokeapi",
+      "category": "entertainment",
+      "name": "JokeAPI",
+      "url": "https://v2.jokeapi.dev/joke/Programming?type=single",
+      "json_path": "joke",
+      "fallback": "chucknorris"
+    },
+    {
+      "id": "chucknorris",
+      "category": "entertainment",
+      "name": "Chuck Norris Jokes",
+      "url": "https://api.chucknorris.io/jokes/random",
+      "json_path": "value",
+      "fallback": "pokeapi"
+    },
+    {
+      "id": "github-user",
+      "category": "developer",
+      "name": "GitHub Users",
+      "url": "https://api.github.com/users/octocat",
+      "json_path": "login",
+      "fallback": "npm-registry"
+    },
+    {
+      "id": "npm-registry",
+      "category": "developer",
+      "name": "npm Registry",
+      "url": "https://registry.npmjs.org/react/latest",
+      "json_path": "version",
+      "fallback": "chess"
+    },
+    {
+      "id": "chess",
+      "category": "developer",
+      "name": "Chess.com Public",
+      "url": "https://api.chess.com/pub/player/hikaru",
+      "json_path": "username",
+      "fallback": "github-user"
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "catapi",
+    "name": "Catapi",
+    "url": "https://api.thecatapi.com/v1/images/search",
+    "category": "Animals"
+  },
+  {
+    "id": "randomfox-2",
+    "name": "Randomfox",
+    "url": "https://randomfox.ca/floof/",
+    "category": "Animals"
+  },
+  {
+    "id": "jikan",
+    "name": "Jikan",
+    "url": "https://api.jikan.moe/v4/anime/1",
+    "category": "Anime"
+  },
+  {
+    "id": "jikan-top",
+    "name": "Jikan Top",
+    "url": "https://api.jikan.moe/v4/top/anime?limit=1",
+    "category": "Anime"
+  },
+  {
+    "id": "nekos",
+    "name": "Nekos",
+    "url": "https://nekos.best/api/v2/endpoints",
+    "category": "Anime"
+  },
+  {
+    "id": "nekos-neko",
+    "name": "Nekos Neko",
+    "url": "https://nekos.best/api/v2/neko",
+    "category": "Anime"
+  },
+  {
+    "id": "metmuseum",
+    "name": "Metmuseum",
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+    "category": "Art & Design"
+  },
+  {
+    "id": "gutendex",
+    "name": "Gutendex",
+    "url": "https://gutendex.com/books/?search=pride",
+    "category": "Books"
+  },
+  {
+    "id": "nager-gb",
+    "name": "Nager Gb",
+    "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GB",
+    "category": "Calendar"
+  },
+  {
+    "id": "blockchain-stats",
+    "name": "Blockchain Stats",
+    "url": "https://api.blockchain.com/v3/exchange/tickers/BTC-USD",
+    "category": "Cryptocurrency"
+  },
+  {
+    "id": "blockchain-ticker",
+    "name": "Blockchain Ticker",
+    "url": "https://blockchain.info/ticker",
+    "category": "Cryptocurrency"
+  },
+  {
+    "id": "coinbase-eth",
+    "name": "Coinbase Eth",
+    "url": "https://api.coinbase.com/v2/prices/ETH-USD/spot",
+    "category": "Cryptocurrency"
+  },
+  {
+    "id": "coinpaprika",
+    "name": "Coinpaprika",
+    "url": "https://api.coinpaprika.com/v1/tickers/btc-bitcoin",
+    "category": "Cryptocurrency"
+  },
+  {
+    "id": "fng",
+    "name": "Fng",
+    "url": "https://api.alternative.me/fng/",
+    "category": "Cryptocurrency"
+  },
+  {
+    "id": "awesomeapi",
+    "name": "Awesomeapi",
+    "url": "https://economia.awesomeapi.com.br/json/last/USD-BRL",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "currency-jsdelivr",
+    "name": "Currency Jsdelivr",
+    "url": "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "exchangerate-jsdelivr2",
+    "name": "Exchangerate Jsdelivr2",
+    "url": "https://latest.currency-api.pages.dev/v1/currencies/eur.json",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "exchangerate-v4",
+    "name": "Exchangerate V4",
+    "url": "https://api.exchangerate-api.com/v4/latest/USD",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "frankfurter-gbp",
+    "name": "Frankfurter Gbp",
+    "url": "https://api.frankfurter.dev/v1/latest?from=GBP&to=USD",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "nbp",
+    "name": "Nbp",
+    "url": "https://api.nbp.pl/api/exchangerates/tables/a/?format=json",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "nbp-usd",
+    "name": "Nbp Usd",
+    "url": "https://api.nbp.pl/api/exchangerates/rates/a/usd/?format=json",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "vatcomply",
+    "name": "Vatcomply",
+    "url": "https://api.vatcomply.com/rates?base=USD",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "vatcomply-eur",
+    "name": "Vatcomply Eur",
+    "url": "https://api.vatcomply.com/rates?base=EUR",
+    "category": "Currency Exchange"
+  },
+  {
+    "id": "chess-magnus",
+    "name": "Chess Magnus",
+    "url": "https://api.chess.com/pub/player/magnuscarlsen",
+    "category": "Development"
+  },
+  {
+    "id": "gh-octocat-repos",
+    "name": "Gh Octocat Repos",
+    "url": "https://api.github.com/users/octocat/repos?per_page=1",
+    "category": "Development"
+  },
+  {
+    "id": "github-zen",
+    "name": "Github Zen",
+    "url": "https://api.github.com/zen",
+    "category": "Development"
+  },
+  {
+    "id": "httpbingo-ip",
+    "name": "Httpbingo Ip",
+    "url": "https://httpbingo.org/ip",
+    "category": "Development"
+  },
+  {
+    "id": "npm-lodash",
+    "name": "Npm Lodash",
+    "url": "https://registry.npmjs.org/lodash/latest",
+    "category": "Development"
+  },
+  {
+    "id": "postmanecho",
+    "name": "Postmanecho",
+    "url": "https://postman-echo.com/get?foo=bar",
+    "category": "Development"
+  },
+  {
+    "id": "rubygems",
+    "name": "Rubygems",
+    "url": "https://rubygems.org/api/v1/gems/rails.json",
+    "category": "Development"
+  },
+  {
+    "id": "rubygems-rake",
+    "name": "Rubygems Rake",
+    "url": "https://rubygems.org/api/v1/gems/rake.json",
+    "category": "Development"
+  },
+  {
+    "id": "dict-world",
+    "name": "Dict World",
+    "url": "https://api.dictionaryapi.dev/api/v2/entries/en/world",
+    "category": "Dictionaries"
+  },
+  {
+    "id": "urban",
+    "name": "Urban",
+    "url": "https://api.urbandictionary.com/v0/define?term=api",
+    "category": "Dictionaries"
+  },
+  {
+    "id": "urban-hello",
+    "name": "Urban Hello",
+    "url": "https://api.urbandictionary.com/v0/define?term=hello",
+    "category": "Dictionaries"
+  },
+  {
+    "id": "wiktionary-2",
+    "name": "Wiktionary",
+    "url": "https://en.wiktionary.org/api/rest_v1/page/definition/hello",
+    "category": "Dictionaries"
+  },
+  {
+    "id": "hp-api",
+    "name": "Hp Api",
+    "url": "https://hp-api.onrender.com/api/characters",
+    "category": "Entertainment"
+  },
+  {
+    "id": "kanye",
+    "name": "Kanye",
+    "url": "https://api.kanye.rest/",
+    "category": "Entertainment"
+  },
+  {
+    "id": "official-ten",
+    "name": "Official Ten",
+    "url": "https://official-joke-api.appspot.com/jokes/ten",
+    "category": "Entertainment"
+  },
+  {
+    "id": "officialjoke",
+    "name": "Officialjoke",
+    "url": "https://official-joke-api.appspot.com/random_joke",
+    "category": "Entertainment"
+  },
+  {
+    "id": "opentdb",
+    "name": "Opentdb",
+    "url": "https://opentdb.com/api.php?amount=1",
+    "category": "Entertainment"
+  },
+  {
+    "id": "pokeapi-berry",
+    "name": "Pokeapi Berry",
+    "url": "https://pokeapi.co/api/v2/berry/1",
+    "category": "Entertainment"
+  },
+  {
+    "id": "rickmorty-loc",
+    "name": "Rickmorty Loc",
+    "url": "https://rickandmortyapi.com/api/location/1",
+    "category": "Entertainment"
+  },
+  {
+    "id": "sample-movies",
+    "name": "Sample Movies",
+    "url": "https://api.sampleapis.com/movies/animation",
+    "category": "Entertainment"
+  },
+  {
+    "id": "useless-today",
+    "name": "Useless Today",
+    "url": "https://uselessfacts.jsph.pl/api/v2/facts/today",
+    "category": "Entertainment"
+  },
+  {
+    "id": "uselessfacts",
+    "name": "Uselessfacts",
+    "url": "https://uselessfacts.jsph.pl/api/v2/facts/random",
+    "category": "Entertainment"
+  },
+  {
+    "id": "brewery",
+    "name": "Brewery",
+    "url": "https://api.openbrewerydb.org/v1/breweries?per_page=1",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "cocktail-random",
+    "name": "Cocktail Random",
+    "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "cocktaildb",
+    "name": "Cocktaildb",
+    "url": "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "coffee",
+    "name": "Coffee",
+    "url": "https://coffee.alexflipnote.dev/random.json",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "meal-random",
+    "name": "Meal Random",
+    "url": "https://www.themealdb.com/api/json/v1/1/random.php",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "mealdb",
+    "name": "Mealdb",
+    "url": "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "sample-beers",
+    "name": "Sample Beers",
+    "url": "https://api.sampleapis.com/beers/ale",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "sample-coffee",
+    "name": "Sample Coffee",
+    "url": "https://api.sampleapis.com/coffee/hot",
+    "category": "Food & Drink"
+  },
+  {
+    "id": "deckofcards-real",
+    "name": "Deckofcards Real",
+    "url": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+    "category": "Games & Comics"
+  },
+  {
+    "id": "lichess",
+    "name": "Lichess",
+    "url": "https://lichess.org/api/user/lichess",
+    "category": "Games & Comics"
+  },
+  {
+    "id": "lichess-status",
+    "name": "Lichess Status",
+    "url": "https://lichess.org/api/users/status?ids=lichess",
+    "category": "Games & Comics"
+  },
+  {
+    "id": "freeipapi",
+    "name": "Freeipapi",
+    "url": "https://freeipapi.com/api/json",
+    "category": "Geocoding"
+  },
+  {
+    "id": "geojs-ip",
+    "name": "Geojs Ip",
+    "url": "https://get.geojs.io/v1/ip.json",
+    "category": "Geocoding"
+  },
+  {
+    "id": "ifconfig",
+    "name": "Ifconfig",
+    "url": "https://ifconfig.co/json",
+    "category": "Geocoding"
+  },
+  {
+    "id": "ipapi-co",
+    "name": "Ipapi Co",
+    "url": "https://ipapi.co/json/",
+    "category": "Geocoding"
+  },
+  {
+    "id": "ipguide",
+    "name": "Ipguide",
+    "url": "https://ip.guide/",
+    "category": "Geocoding"
+  },
+  {
+    "id": "ipify-v6",
+    "name": "Ipify V6",
+    "url": "https://api64.ipify.org?format=json",
+    "category": "Geocoding"
+  },
+  {
+    "id": "nominatim",
+    "name": "Nominatim",
+    "url": "https://nominatim.openstreetmap.org/search?q=London&format=json&limit=1",
+    "category": "Geocoding"
+  },
+  {
+    "id": "zip-nyc",
+    "name": "Zip Nyc",
+    "url": "https://api.zippopotam.us/us/10001",
+    "category": "Geocoding"
+  },
+  {
+    "id": "musicbrainz",
+    "name": "Musicbrainz",
+    "url": "https://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?fmt=json",
+    "category": "Music"
+  },
+  {
+    "id": "lobsters-newest",
+    "name": "Lobsters Newest",
+    "url": "https://lobste.rs/newest.json",
+    "category": "News"
+  },
+  {
+    "id": "artic-list",
+    "name": "Artic List",
+    "url": "https://api.artic.edu/api/v1/artworks?limit=1",
+    "category": "Science & Math"
+  },
+  {
+    "id": "crossref",
+    "name": "Crossref",
+    "url": "https://api.crossref.org/works?query=climate&rows=1",
+    "category": "Science & Math"
+  },
+  {
+    "id": "crossref-doi",
+    "name": "Crossref Doi",
+    "url": "https://api.crossref.org/works/10.1037/0003-066X.59.1.29",
+    "category": "Science & Math"
+  },
+  {
+    "id": "gbif-tiger",
+    "name": "Gbif Tiger",
+    "url": "https://api.gbif.org/v1/species/match?name=Panthera%20tigris",
+    "category": "Science & Math"
+  },
+  {
+    "id": "openfda-food",
+    "name": "Openfda Food",
+    "url": "https://api.fda.gov/food/enforcement.json?limit=1",
+    "category": "Science & Math"
+  },
+  {
+    "id": "usgs-day",
+    "name": "Usgs Day",
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+    "category": "Science & Math"
+  },
+  {
+    "id": "wiki-moon",
+    "name": "Wiki Moon",
+    "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Moon",
+    "category": "Science & Math"
+  },
+  {
+    "id": "dogceo-breed",
+    "name": "Dogceo Breed",
+    "url": "https://dog.ceo/api/breed/hound/images/random",
+    "category": "Test Data"
+  },
+  {
+    "id": "dummyjson-user",
+    "name": "Dummyjson User",
+    "url": "https://dummyjson.com/users/1",
+    "category": "Test Data"
+  },
+  {
+    "id": "jsonplaceholder-users",
+    "name": "Jsonplaceholder Users",
+    "url": "https://jsonplaceholder.typicode.com/users/1",
+    "category": "Test Data"
+  },
+  {
+    "id": "uuidtools",
+    "name": "Uuidtools",
+    "url": "https://www.uuidtools.com/api/generate/v4",
+    "category": "Test Data"
+  },
+  {
+    "id": "iceandfire-book",
+    "name": "Iceandfire Book",
+    "url": "https://anapioficeandfire.com/api/books/1",
+    "category": "Video"
+  },
+  {
+    "id": "swapi-py4e",
+    "name": "Swapi Py4E",
+    "url": "https://swapi.py4e.com/api/people/1/",
+    "category": "Video"
+  },
+  {
+    "id": "openmeteo-marine",
+    "name": "Openmeteo Marine",
+    "url": "https://marine-api.open-meteo.com/v1/marine?latitude=54.32&longitude=10.15&current=wave_height",
+    "category": "Weather"
+  }
+]
