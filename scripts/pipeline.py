@@ -541,8 +541,8 @@ def cat_slug(name: str) -> str:
 
 def gh_anchor(text: str) -> str:
     s = text.lower()
-    s = re.sub(r"[^a-z0-9\s-]", "", s)
-    s = re.sub(r"\s+", "-", s).strip("-")
+    s = re.sub(r"[^a-z0-9 -]", "", s)
+    s = s.replace(" ", "-").strip("-")
     return s
 
 
@@ -703,7 +703,7 @@ def write_readme(entries: list[dict], by_cat: dict[str, list[dict]]) -> None:
         for e in group:
             note = "spec-only" if e.get("spec_only") or e.get("kind") == "openapi-spec" else ""
             lines.append(
-                f"| {md_cell(e['name'])} | {md_cell(e.get('description') or '')} | `{e['url']}` | {note} |"
+                f"| {md_cell(e['name'])} | {md_cell(e.get('description') or '')} | `{md_cell(e['url'])}` | {note} |"
             )
         lines.append("")
     lines.extend(

@@ -22,7 +22,7 @@ Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request
 
 - [Animals](#animals) (7)
 - [Anime](#anime) (5)
-- [Art & Design](#art-design) (8)
+- [Art & Design](#art--design) (8)
 - [Blockchain](#blockchain) (4)
 - [Books](#books) (5)
 - [Business](#business) (3)
@@ -31,13 +31,13 @@ Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request
 - [Currency Exchange](#currency-exchange) (17)
 - [Development](#development) (40)
 - [Dictionaries](#dictionaries) (10)
-- [Documents & Productivity](#documents-productivity) (5)
+- [Documents & Productivity](#documents--productivity) (5)
 - [Email](#email) (4)
 - [Entertainment](#entertainment) (23)
 - [Environment](#environment) (3)
 - [Finance](#finance) (6)
-- [Food & Drink](#food-drink) (10)
-- [Games & Comics](#games-comics) (23)
+- [Food & Drink](#food--drink) (10)
+- [Games & Comics](#games--comics) (23)
 - [Geocoding](#geocoding) (28)
 - [Government](#government) (22)
 - [Health](#health) (8)
@@ -50,10 +50,10 @@ Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request
 - [Personality](#personality) (9)
 - [Photography](#photography) (2)
 - [Programming](#programming) (3)
-- [Science & Math](#science-math) (22)
+- [Science & Math](#science--math) (22)
 - [Security](#security) (5)
 - [Shopping](#shopping) (2)
-- [Sports & Fitness](#sports-fitness) (10)
+- [Sports & Fitness](#sports--fitness) (10)
 - [Test Data](#test-data) (23)
 - [Transportation](#transportation) (10)
 - [Vehicle](#vehicle) (2)
@@ -236,7 +236,7 @@ Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request
 | Free Dictionary | Definitions, phonetics, pronounciations, parts of speech, examples, synonyms | `https://api.dictionaryapi.dev/api/v2/entries/en/hello` |  |
 | Free Dictionary API | Free Dictionary API | `https://api.dictionaryapi.dev/api/v2/entries/en/hello` |  |
 | LanguageTool languages | LanguageTool languages | `https://api.languagetool.org/v2/languages` |  |
-| MyMemory Translate | MyMemory Translate | `https://api.mymemory.translated.net/get?q=Hello&langpair=en|es` |  |
+| MyMemory Translate | MyMemory Translate | `https://api.mymemory.translated.net/get?q=Hello&langpair=en\|es` |  |
 | Urban |  | `https://api.urbandictionary.com/v0/define?term=api` |  |
 | Urban Hello |  | `https://api.urbandictionary.com/v0/define?term=hello` |  |
 | Wiktionary | Collaborative dictionary data | `https://en.wiktionary.org/w/rest.php/v1/search` |  |
