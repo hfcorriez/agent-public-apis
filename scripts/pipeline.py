@@ -42,6 +42,7 @@ CAT_MAP = {
 def norm_cat(name: str) -> str:
     return CAT_MAP.get(name, name)
 SKILL = os.path.join(ROOT, "SKILL.md")
+README = os.path.join(ROOT, "README.md")
 REFS = os.path.join(ROOT, "references")
 UA = "agent-public-apis-verify/1.0 (+https://github.com/hfcorriez/agent-public-apis)"
 TIMEOUT = 10
@@ -538,6 +539,17 @@ def cat_slug(name: str) -> str:
     return slug(name)
 
 
+def gh_anchor(text: str) -> str:
+    s = text.lower()
+    s = re.sub(r"[^a-z0-9 -]", "", s)
+    s = s.replace(" ", "-").strip("-")
+    return s
+
+
+def md_cell(text: str) -> str:
+    return (text or "").replace("|", "\\|").replace("\n", " ").strip()
+
+
 def generate_docs(entries: list[dict]) -> None:
     os.makedirs(REFS, exist_ok=True)
     for name in os.listdir(REFS):
@@ -644,7 +656,77 @@ def generate_docs(entries: list[dict]) -> None:
         raise SystemExit(f"SKILL.md would be {lines} lines, cap is 250")
     with open(SKILL, "w", encoding="utf-8") as f:
         f.write(text if text.endswith("\n") else text + "\n")
-    print(f"wrote SKILL.md ({lines} lines), {len(os.listdir(REFS))} reference files")
+    write_readme(entries, by_cat)
+    print(f"wrote SKILL.md ({lines} lines), README.md, {len(os.listdir(REFS))} reference files")
+
+
+def write_readme(entries: list[dict], by_cat: dict[str, list[dict]]) -> None:
+    cats = sorted(by_cat, key=lambda s: s.lower())
+    spec_n = sum(1 for e in entries if e.get("spec_only") or e.get("kind") == "openapi-spec")
+    lines = [
+        "# agent-public-apis",
+        "",
+        f"Public APIs, agent-ready — {len(entries)} verified, no keys, no signup.",
+        "",
+        "A distilled, machine-verified edition of [public-apis](https://github.com/public-apis/public-apis): every entry is probed live over HTTPS, requires no API key and no registration, and ships in a format agents can use directly as a skill.",
+        "",
+        "Every catalog entry is no-key, HTTPS-only, and live-verified (`verify.sh`). Spec-only rows are marked in Notes — the probe hit an OpenAPI/docs URL, not a live data endpoint.",
+        "",
+        "- `SKILL.md` — index + recommended curls (drop it into your agent as a skill)",
+        "- `data/apis.json` — full verified catalog (name, endpoint, category, example, response fields, rate limits, verified-at)",
+        "- `references/` — per-category entries, loaded on demand",
+        "- `verify.sh` — re-probe the whole catalog",
+        "",
+        "```bash",
+        "./verify.sh           # all catalog entries must be live",
+        "./verify.sh --refresh # re-harvest upstream lists and rebuild",
+        "```",
+        "",
+        "Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request then cache, use `fallback` if the primary dies.",
+        "",
+        f"## Catalog ({len(cats)} categories, {len(entries)} APIs",
+    ]
+    if spec_n:
+        lines[-1] += f", {spec_n} spec-only"
+    lines[-1] += ")"
+    lines.append("")
+    for cat in cats:
+        n = len(by_cat[cat])
+        lines.append(f"- [{cat}](#{gh_anchor(cat)}) ({n})")
+    lines.append("")
+    for cat in cats:
+        group = sorted(by_cat[cat], key=lambda e: e["name"].lower())
+        lines.append(f"## {cat}")
+        lines.append("")
+        lines.append("| Name | Purpose | Endpoint | Notes |")
+        lines.append("| --- | --- | --- | --- |")
+        for e in group:
+            note = "spec-only" if e.get("spec_only") or e.get("kind") == "openapi-spec" else ""
+            lines.append(
+                f"| {md_cell(e['name'])} | {md_cell(e.get('description') or '')} | `{md_cell(e['url'])}` | {note} |"
+            )
+        lines.append("")
+    lines.extend(
+        [
+            "## Sources",
+            "",
+            "Distilled from [public-apis/public-apis](https://github.com/public-apis/public-apis) and [marcelscruz/public-apis](https://github.com/marcelscruz/public-apis), with OpenAPI structure hints from [apis.guru](https://apis.guru). Only entries that pass live verification are included.",
+            "",
+            "## License",
+            "",
+            "MIT",
+            "",
+        ]
+    )
+    text = "\n".join(lines)
+    with open(README, "w", encoding="utf-8") as f:
+        f.write(text if text.endswith("\n") else text + "\n")
+
+
+def cmd_docs() -> int:
+    entries = load_catalog()
+    generate_docs(entries)
+    return 0
 
 
 def cmd_refresh() -> int:
@@ -758,9 +840,11 @@ def cmd_verify() -> int:
 def main(argv: list[str]) -> int:
     if argv and argv[0] == "refresh":
         return cmd_refresh()
+    if argv and argv[0] == "docs":
+        return cmd_docs()
     if argv and argv[0] in ("verify", ""):
         return cmd_verify()
-    print("usage: pipeline.py verify|refresh", file=sys.stderr)
+    print("usage: pipeline.py verify|refresh|docs", file=sys.stderr)
     return 2
 
 
