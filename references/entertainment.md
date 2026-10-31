@@ -20,6 +20,10 @@ Fields: id, name, status, species, type, gender, origin, location. Limit: unknow
 `GET https://api.tvmaze.com/shows/1`
 Fields: id, url, name, type, language, genres, status, runtime. Limit: unknown. Fallback: `rickmorty`.
 
+## Bucketlist.nl daily experience idea (Dutch)
+`GET https://bucketlist.nl/api/droom-van-de-dag?scope=nederland&lang=nl`
+Fields: date, scope, language, requestedTheme, dream, attribution. Limit: unknown. Fallback: `—`.
+
 ## CosmyDay Astrology
 `GET https://api.cosmyday.com/events/upcoming?days=30&min_importance=60`
 Fields: timezone, computed_with, covers, from, to, count, events. Limit: unknown. Fallback: `imgflip`.

@@ -28,7 +28,7 @@ Rules: no key, HTTPS only, send a User-Agent, one request then cache, use `fallb
 - [Dictionaries](references/dictionaries.md) (10)
 - [Documents & Productivity](references/documents-productivity.md) (5)
 - [Email](references/email.md) (4)
-- [Entertainment](references/entertainment.md) (23)
+- [Entertainment](references/entertainment.md) (24)
 - [Environment](references/environment.md) (3)
 - [Finance](references/finance.md) (6)
 - [Food & Drink](references/food-drink.md) (10)

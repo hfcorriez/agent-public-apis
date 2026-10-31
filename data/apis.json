@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generated_at": "2026-08-18T05:26:11Z",
+  "generated_at": "2026-10-31T14:22:02Z",
   "user_agent": "agent-public-apis-verify/1.0 (+https://github.com/hfcorriez/agent-public-apis)",
-  "count": 411,
+  "count": 412,
   "apis": [
     {
       "id": "cat-facts",
@@ -3013,6 +3013,29 @@
       "fallback": "rickmorty",
       "verified_at": "2026-08-18T05:26:11Z",
       "spec_only": false
+    },
+    {
+      "id": "bucketlist-nl-daily-experience",
+      "name": "Bucketlist.nl daily experience idea (Dutch)",
+      "category": "Entertainment",
+      "description": "",
+      "url": "https://bucketlist.nl/api/droom-van-de-dag?scope=nederland&lang=nl",
+      "source": "known-endpoint",
+      "json_path": "dream.title",
+      "fields": [
+        "date",
+        "scope",
+        "language",
+        "requestedTheme",
+        "dream",
+        "attribution"
+      ],
+      "kind": "json",
+      "spec_only": false,
+      "rate_limit": "unknown",
+      "preferred": false,
+      "fallback": "",
+      "verified_at": "2026-10-31T14:22:02Z"
     },
     {
       "id": "cosmyday-astrology",

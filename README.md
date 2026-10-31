@@ -1,6 +1,6 @@
 # agent-public-apis
 
-Public APIs, agent-ready — 411 verified, no keys, no signup.
+Public APIs, agent-ready — 412 verified, no keys, no signup.
 
 A distilled, machine-verified edition of [public-apis](https://github.com/public-apis/public-apis): every entry is probed live over HTTPS, requires no API key and no registration, and ships in a format agents can use directly as a skill.
 
@@ -18,7 +18,7 @@ Every catalog entry is no-key, HTTPS-only, and live-verified (`verify.sh`). Spec
 
 Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request then cache, use `fallback` if the primary dies.
 
-## Catalog (39 categories, 411 APIs, 37 spec-only)
+## Catalog (39 categories, 412 APIs, 37 spec-only)
 
 - [Animals](#animals) (7)
 - [Anime](#anime) (5)
@@ -33,7 +33,7 @@ Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request
 - [Dictionaries](#dictionaries) (10)
 - [Documents & Productivity](#documents--productivity) (5)
 - [Email](#email) (4)
-- [Entertainment](#entertainment) (23)
+- [Entertainment](#entertainment) (24)
 - [Environment](#environment) (3)
 - [Finance](#finance) (6)
 - [Food & Drink](#food--drink) (10)
@@ -265,6 +265,7 @@ Rules baked into every entry: no key, HTTPS only, send a User-Agent, one request
 
 | Name | Purpose | Endpoint | Notes |
 | --- | --- | --- | --- |
+| Bucketlist.nl daily experience idea (Dutch) |  | `https://bucketlist.nl/api/droom-van-de-dag?scope=nederland&lang=nl` |  |
 | Chuck Norris Jokes | Chuck Norris Jokes | `https://api.chucknorris.io/jokes/random` |  |
 | CosmyDay Astrology | Natal charts and sky events computed from Swiss Ephemeris | `https://api.cosmyday.com/events/upcoming?days=30&min_importance=60` |  |
 | Deny By Default as a Service | Random creative rejection and acceptance reasons | `https://dbdaas.rajathjaiprakash.com/help` |  |
