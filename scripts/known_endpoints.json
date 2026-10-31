@@ -478,5 +478,12 @@
     "name": "Openmeteo Marine",
     "url": "https://marine-api.open-meteo.com/v1/marine?latitude=54.32&longitude=10.15&current=wave_height",
     "category": "Weather"
+  },
+  {
+    "id": "bucketlist-nl-daily-experience",
+    "name": "Bucketlist.nl daily experience idea (Dutch)",
+    "url": "https://bucketlist.nl/api/droom-van-de-dag?scope=nederland&lang=nl",
+    "category": "Entertainment",
+    "json_path": "dream.title"
   }
 ]
